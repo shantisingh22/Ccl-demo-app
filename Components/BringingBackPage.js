@@ -18,6 +18,7 @@ export default function BringingBackPage() {
         <View style={[styles.dot, styles.activeDot]} />
         <View style={styles.dot} />
         <View style={styles.dot} />
+        <View style={styles.dot} />
       </View>
 
       <TouchableOpacity style={styles.continueButton}>
@@ -37,19 +38,19 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    padding: 20,
+    // padding: 20,
   },
   logo: {
     width: 200,
     height: 200,
     resizeMode: "contain",
     marginBottom: 20,
+    marginTop: 90,
   },
   title: {
     fontSize: 22,
     textAlign: "center",
     marginBottom: 10,
-    marginTop: 50,
     color: "#004d40",
     width: 347,
     height: 80,
@@ -82,13 +83,9 @@ const styles = StyleSheet.create({
   continueButton: {
     backgroundColor: "#00796B",
     paddingVertical: 12,
-    paddingHorizontal: 40,
+    paddingHorizontal: 50,
     borderRadius: 6,
     marginBottom: 15,
-    elevation: 3, // shadow Android
-    shadowColor: "#000", // shadow iOS
-    shadowOpacity: 0.2,
-    shadowOffset: { width: 0, height: 2 },
   },
   continueText: {
     color: "white",
