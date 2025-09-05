@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#4682B4',
+    width:"100%",
   },
   logo: {
     width: 150,
