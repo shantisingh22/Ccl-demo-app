@@ -1,13 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import IntroScreen from './Components/IntroScreen';
+import WorkShop from './Components/WorkShop'
 ;
 
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <IntroScreen />  
+      <IntroScreen /> 
+      {/* <WorkShop/>  */}
       <StatusBar style="auto" />
     </View>
   );
