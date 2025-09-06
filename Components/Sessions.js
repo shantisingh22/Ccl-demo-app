@@ -25,7 +25,7 @@ export default Sessions;
 
 const styles = StyleSheet.create({
   mainContainer:{
-    width: 347,
+    // width: 347,
     height: 428,
     alignItems: "center",
     justifyContent: "center",
