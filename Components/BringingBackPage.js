@@ -1,9 +1,9 @@
-import { StyleSheet, View, Text, Image, TouchableOpacity , StatusBar } from "react-native";
+import { StyleSheet, View, Text, Image, TouchableOpacity} from "react-native";
 
 export default function BringingBackPage({ navigation }) {
   return (
     <View style={styles.container}>
-      <StatusBar hidden={true}/>
+      {/* <StatusBar hidden={true}/> */}
       <Image source={require("../assets/Image_01.png")} style={styles.logo} />
 
       <Text style={styles.title}>
