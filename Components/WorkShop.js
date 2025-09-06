@@ -19,7 +19,7 @@ const WorkShop = () => {
   and produce videos and publications.
 </Text>
 
-
+m 
       {/* Dots */}
       <View style={styles.dots}>
         <View style={[styles.dot, { backgroundColor: "#ccc" }]} />
