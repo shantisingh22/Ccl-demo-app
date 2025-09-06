@@ -1,8 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, View } from "react-native";
 // import IntroScreen from './Components/IntroScreen';
-import BringingBackPage from './Components/BringingBackPage';
+import BringingBackPage from "./Components/BringingBackPage";
 // import FacebookButton from "./FacebookButton";
+import CertificationCourse from "./Components/CertificationCourse";
 
 export default function App() {
   return (
@@ -10,7 +11,8 @@ export default function App() {
       {/* <IntroScreen />   */}
       <StatusBar style="auto" />
       {/* <FacebookButton /> */}
-      <BringingBackPage />
+      {/* <BringingBackPage /> */}
+      <CertificationCourse />
     </View>
   );
 }
