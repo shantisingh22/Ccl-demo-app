@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, StatusBar } from 'react-native';
 
 const IntroScreen = () => {
   return (
     <View style={styles.container}>
+        <StatusBar hidden={true} />
       <Image
         source={require('../assets/ccl_logo.png')}
         style={styles.logo}
@@ -21,6 +22,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#4682B4',
+    width:"100%",
   },
   logo: {
     width: 150,

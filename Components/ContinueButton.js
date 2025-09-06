@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
-export default function ContinueButton() {
+export default function ContinueButton({ onPress }) {
   return (
-    <TouchableOpacity style={styles.continueButton}>
-      <Text style={styles.continueText}>CONTINUE</Text>
+    <TouchableOpacity style={styles.continueButton} onPress={onPress}>
+      <Text style={styles.continueText}>Continue</Text>
     </TouchableOpacity>
   );
 }

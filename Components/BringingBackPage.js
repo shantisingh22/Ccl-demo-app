@@ -1,7 +1,7 @@
 import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
 import ContinueButton from "./ContinueButton";
 
-export default function BringingBackPage() {
+export default function BringingBackPage({ navigation }) {
   return (
     <View style={styles.container}>
       <Image source={require("../assets/Image_01.png")} style={styles.logo} />
@@ -21,8 +21,9 @@ export default function BringingBackPage() {
         <View style={styles.dot} />
         <View style={styles.dot} />
       </View>
-      <ContinueButton />
-    
+
+      <ContinueButton onPress={() => navigation.navigate("Sessions")} />
+
       <TouchableOpacity>
         <Text style={styles.skipText}>SKIP</Text>
       </TouchableOpacity>
