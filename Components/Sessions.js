@@ -1,4 +1,4 @@
-import { Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, Image, View, StyleSheet, TouchableOpacity } from 'react-native';
 
 const Sessions = ({ 
   h1 = "KGBV", 
@@ -6,7 +6,7 @@ const Sessions = ({
   description = "We make learning joyful and reach \n more than 80,000 students every week.", 
   onPress 
 }) => (
-  <TouchableOpacity style={styles.mainContainer} onPress={onPress}>
+  <View style={styles.mainContainer} onPress={onPress}>
     <Image 
       source={require('../assets/brick.png')} 
       style={styles.Thirdimg} 
@@ -18,15 +18,16 @@ const Sessions = ({
       source={require('../assets/Group 3.png')} 
       style={styles.group3img} 
     /> 
-  </TouchableOpacity>
+    <TouchableOpacity>
+        <Text style={styles.skipText}>SKIP</Text>
+    </TouchableOpacity>
+  </View>
 );
 
 export default Sessions;
 
 const styles = StyleSheet.create({
   mainContainer:{
-    width: 347,
-    height: 428,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -57,5 +58,11 @@ const styles = StyleSheet.create({
     width:48,
     height:9,
     marginTop: 40,
-  }
+  },
+  skipText: {
+    color: "gray",
+    fontSize: 14,
+    marginTop:10,
+    textDecorationLine: "underline",
+  },
 });
