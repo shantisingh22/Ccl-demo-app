@@ -24,7 +24,7 @@ export default function BringingBackPage({ navigation }) {
 
       <ContinueButton onPress={() => navigation.navigate("Sessions")} />
 
-      <TouchableOpacity onPress={() => navigation.navigate("Intro")}>
+      <TouchableOpacity onPress={() => navigation.navigate("BringingBack")}>
         <Text style={styles.skipText}>SKIP</Text>
       </TouchableOpacity>
     </View>

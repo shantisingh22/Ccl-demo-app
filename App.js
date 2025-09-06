@@ -5,6 +5,8 @@ import { StatusBar } from "expo-status-bar";
 import IntroScreen from "./Components/IntroScreen";
 import Sessions from "./Components/Sessions";
 import BringingBackPage from "./Components/BringingBackPage";
+import WorkShop from "./Components/WorkShop";
+import  CertificationCourse from "./Components/CertificationCourse";
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -15,6 +17,10 @@ export default function App() {
         <Stack.Screen name="Intro" component={IntroScreen} />
         <Stack.Screen name="BringingBack" component={BringingBackPage} />
         <Stack.Screen name="Sessions" component={Sessions} />
+        <Stack.Screen name="WorkShop" component={WorkShop} />
+        <Stack.Screen name="CertificationCourse" component={CertificationCourse} />
+      
+
       </Stack.Navigator>
     </NavigationContainer>
   );
