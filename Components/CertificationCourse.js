@@ -1,30 +1,28 @@
 import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
 import ContinueButton from "./ContinueButton";
 
-
-export default function CertificationCourse({navigation }) {
+export default function CertificationCourse ({ navigation }) {
   return (
     <View style={styles.container}>
       <Image source={require("../assets/Image_04.png")} style={styles.logo} />
 
       <Text style={styles.title}>
-        <Text style={styles.bold}>
-          Certification <br></br>Courses
-        </Text>
+        <Text style={styles.bold}>Certification{"\n"}Courses</Text>
       </Text>
 
       <Text style={styles.subtitle}>
-        We empower teachers and educators with self-paced new age learning
-        courses.
+      We empower teachers and educators{"\n"} with self-paced new age learning{"\n"}
+      courses.
       </Text>
 
       <View style={styles.dotsContainer}>
-        <View style={styles.dot} />
-        <View style={styles.dot} />
-        <View style={styles.dot} />
         <View style={[styles.dot, styles.activeDot]} />
+        <View style={styles.dot} />
+        <View style={styles.dot} />
+        <View style={styles.dot} />
       </View>
-      <ContinueButton onPress={() => navigation.navigate("CreativeLearning")}/>
+
+      <ContinueButton onPress={() => navigation.navigate("CreativeLearning")} />
 
       <TouchableOpacity onPress={() => navigation.navigate("WorkShop")}>
         <Text style={styles.skipText}>SKIP</Text>
@@ -35,6 +33,7 @@ export default function CertificationCourse({navigation }) {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
@@ -55,12 +54,11 @@ const styles = StyleSheet.create({
     height: 80,
   },
   bold: {
-    fontWeight: 800,
+    fontWeight: "800",
     fontSize: 32,
     color: "#004d40",
   },
   subtitle: {
-    width: 250,
     fontSize: 14,
     color: "gray",
     textAlign: "center",

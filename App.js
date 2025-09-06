@@ -13,6 +13,8 @@ import FacebookButton from "./Components/FacebookButton";
 import SignInScreen from "./Components/SignIn";
 import SignUpScreen from "./Components/SignUppage";
 import CreativeLearning from "./Components/CreativeLearning";
+import HomePage from "./Components/HomePage";
+
 
 const Stack = createStackNavigator();
 
@@ -31,7 +33,30 @@ export default function App() {
         <Stack.Screen name="WorkShop" component={WorkShop} />
         <Stack.Screen name="CertificationCourse" component={CertificationCourse} />
         <Stack.Screen name="CreativeLearning" component={CreativeLearning} />
+        <Stack.Screen name="HomePage" component={HomePage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
+
+
+
+
+{/* <View style={styles.buttonRow}>
+        <TouchableOpacity
+          style={styles.signInButton}
+          onPress={() => navigation.navigate("SignIn")}
+        >
+          <Text style={styles.signInText}>SIGN IN</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={() => {
+            console.log("Pressed SignUp Button");
+            navigation.navigate("SignUp");
+          }}
+        >
+          <Text style={styles.signUpText}>SIGN UP</Text>
+        </TouchableOpacity>
+      </View> */}

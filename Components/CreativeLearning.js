@@ -27,12 +27,12 @@ export default function CreativeLearning({ navigation }) {
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => {
+            style={styles.signUpButton}  
+            onPress={() => {
             console.log("Pressed SignUp Button");
             navigation.navigate("SignUp");
-          }}
-        >
-          <Text style={styles.signUpText}>SIGN UP</Text>
+            }}>
+            <Text style={styles.signUpText}>SIGN UP</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
   signInText: {
     color: "white",
     fontWeight: "600",
+    textAlign:"center",
   },
   signUpButton: {
     borderColor: "#065666",
@@ -102,5 +103,6 @@ const styles = StyleSheet.create({
   signUpText: {
     color: "#065666",
     fontWeight: "600",
+    textAlign:"center",
   },
 });

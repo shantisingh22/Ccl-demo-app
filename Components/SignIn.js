@@ -8,17 +8,23 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import FacebookButton from "./FacebookButton";
+import GoogleButton from "./GoogleButton";
 
 export default function SignInScreen({ navigation }) {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.backBtn}  onPress={() => navigation.navigate("CreativeLearning")}>
-        <Ionicons name="arrow-back" size={24} color="#004d40" />
-      </TouchableOpacity>
+      <View style={styles.header}>
+        <TouchableOpacity
+          style={styles.backBtn}
+          onPress={() => navigation.navigate("CreativeLearning")}
+        >
+          <Ionicons name="arrow-back" size={24} color="#004d40" />
+        </TouchableOpacity>
+        <Text style={styles.title}>SIGN IN</Text>
+      </View>
 
-      <Text style={styles.title}>SIGN IN</Text>
       <Text style={styles.subtitle}>
         Sign In To Access The World Of Toy-<br></br>Based Experiential Learning,
       </Text>
@@ -62,10 +68,7 @@ export default function SignInScreen({ navigation }) {
 
       <FacebookButton />
 
-      <TouchableOpacity style={styles.googleButton}>
-        <Ionicons name="logo-google" size={20} color="black" />
-        <Text style={styles.googleText}> Sign In With Google</Text>
-      </TouchableOpacity>
+      <GoogleButton/>
 
       <Text style={styles.bottomText}>
         Don’t have an Account?
@@ -78,8 +81,9 @@ export default function SignInScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    padding: 30,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#f5f5f5",
   },
   backBtn: {
     marginBottom: 20,
@@ -90,6 +94,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "#004d40",
     marginBottom: 10,
+    letterspecing:2,
   },
   subtitle: {
     textAlign: "center",
@@ -188,5 +193,19 @@ const styles = StyleSheet.create({
   signUpLink: {
     color: "#00796B",
     fontWeight: "bold",
+  },
+
+  header: {
+    flexDirection: "row",       
+    alignItems: "center",       
+    marginBottom: 20,
+  },
+  backBtn: {
+    marginRight: 10,            
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#004d40",
   },
 });
