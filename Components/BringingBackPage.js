@@ -4,7 +4,6 @@ import ContinueButton from "./ContinueButton";
 export default function BringingBackPage({ navigation }) {
   return (
     <View style={styles.container}>
-      {/* <StatusBar hidden={true}/> */}
       <Image source={require("../assets/Image_01.png")} style={styles.logo} />
 
       <Text style={styles.title}>
