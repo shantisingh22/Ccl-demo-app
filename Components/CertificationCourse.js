@@ -1,31 +1,30 @@
 import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
 import ContinueButton from "./ContinueButton";
 
-export default function BringingBackPage({ navigation }) {
+export default function CCertificationCourse() {
   return (
     <View style={styles.container}>
-      {/* <StatusBar hidden={true}/> */}
-      <Image source={require("../assets/Image_01.png")} style={styles.logo} />
+      <Image source={require("../assets/Image_04.png")} style={styles.logo} />
 
       <Text style={styles.title}>
-        <Text style={styles.bold}>'Bringing back the gleam in the eyes'</Text>
+        <Text style={styles.bold}>
+          Certification <br></br>Courses
+        </Text>
       </Text>
 
       <Text style={styles.subtitle}>
-        We Create And Disseminate Inspiring {"\n"}
-        And Engaging STEM Curriculum.
+        We empower teachers and educators with self-paced new age learning
+        courses.
       </Text>
 
       <View style={styles.dotsContainer}>
+        <View style={styles.dot} />
+        <View style={styles.dot} />
+        <View style={styles.dot} />
         <View style={[styles.dot, styles.activeDot]} />
-        <View style={styles.dot} />
-        <View style={styles.dot} />
-        <View style={styles.dot} />
       </View>
-
-      <ContinueButton onPress={() => navigation.navigate("Sessions")} />
-
-      <TouchableOpacity onPress={() => navigation.navigate("Intro")}>
+      <ContinueButton />
+      <TouchableOpacity>
         <Text style={styles.skipText}>SKIP</Text>
       </TouchableOpacity>
     </View>
@@ -34,7 +33,6 @@ export default function BringingBackPage({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
@@ -55,11 +53,12 @@ const styles = StyleSheet.create({
     height: 80,
   },
   bold: {
-    fontWeight: "800",
+    fontWeight: 800,
     fontSize: 32,
     color: "#004d40",
   },
   subtitle: {
+    width: 250,
     fontSize: 14,
     color: "gray",
     textAlign: "center",
