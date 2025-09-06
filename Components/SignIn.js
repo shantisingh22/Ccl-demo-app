@@ -14,7 +14,7 @@ export default function SignInScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.backBtn}>
+      <TouchableOpacity style={styles.backBtn}  onPress={() => navigation.navigate("CreativeLearning")}>
         <Ionicons name="arrow-back" size={24} color="#004d40" />
       </TouchableOpacity>
 

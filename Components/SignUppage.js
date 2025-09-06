@@ -1,7 +1,13 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
-
-export default function SignUpScreen() {
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+} from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+export default function SignUpScreen({ navigation }) {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const [email, setEmail] = useState("");
@@ -49,6 +55,13 @@ export default function SignUpScreen() {
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity
+        style={styles.backBtn}
+        onPress={() => navigation.navigate("CreativeLearning")}
+      >
+        <Ionicons name="arrow-back" size={24} color="#004d40" />
+      </TouchableOpacity>
+
       <Text style={styles.title}>SIGN UP</Text>
       <Text style={styles.subtitle}>
         Sign In To Access The World Of Toy-Based Experiential Learning,
@@ -109,7 +122,8 @@ export default function SignUpScreen() {
       </TouchableOpacity>
 
       <Text style={styles.footer}>
-        Don’t have an Account? <Text style={styles.signupLink}>Sign Up here</Text>
+        Don’t have an Account?{" "}
+        <Text style={styles.signupLink}>Sign Up here</Text>
       </Text>
     </View>
   );

@@ -1,6 +1,7 @@
 import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
 import ContinueButton from "./ContinueButton";
 
+
 export default function CertificationCourse({navigation }) {
   return (
     <View style={styles.container}>
@@ -23,7 +24,7 @@ export default function CertificationCourse({navigation }) {
         <View style={styles.dot} />
         <View style={[styles.dot, styles.activeDot]} />
       </View>
-      <ContinueButton />
+      <ContinueButton onPress={() => navigation.navigate("CreativeLearning")}/>
 
       <TouchableOpacity onPress={() => navigation.navigate("WorkShop")}>
         <Text style={styles.skipText}>SKIP</Text>
