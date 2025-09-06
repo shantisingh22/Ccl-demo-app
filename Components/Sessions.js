@@ -1,67 +1,87 @@
-import { Text, Image, View, StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, Image, TouchableOpacity , StatusBar} from "react-native";
 import ContinueButton from "./ContinueButton";
 
+export default function Sessions({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <StatusBar hidden={true}/>
+      <Image source={require("../assets/brick.png")} style={styles.logo} />
 
-const Sessions = ({
-  h1 = "KGBV",
-  h2 = "Sessions",
-  description = "We make learning joyful and reach \n more than 80,000 students every week.",
-  onPress,
-}) => (
-  <View style={styles.mainContainer} onPress={onPress}>
-    <Image source={require("../assets/brick.png")} style={styles.Thirdimg} />
-    <Text style={styles.h1}>{h1}</Text>
-    <Text style={styles.h1}>{h2}</Text>
-    <Text style={styles.description}>{description}</Text>
-    <Image source={require("../assets/Group 3.png")} style={styles.group3img} />
+      <Text style={styles.title}>
+        <Text style={styles.bold}>KGBV {"\n"} Sessions</Text>
+      </Text>
 
-    <ContinueButton />
-    
-    <TouchableOpacity>
-      <Text style={styles.skipText}>SKIP</Text>
-    </TouchableOpacity>
-  </View>
-);
+      <Text style={styles.subtitle}>
+        We make learning joyful and reach{"\n"}more than 80,000 students every week.
+        
+      </Text>
 
-export default Sessions;
+      <View style={styles.dotsContainer}>
+        <View style={styles.dot} />
+        <View style={[styles.dot, styles.activeDot]} />
+        <View style={styles.dot} />
+        <View style={styles.dot} />
+      </View>
+
+      <ContinueButton onPress={() => navigation.navigate("Sessions")} />
+
+      <TouchableOpacity onPress={() => navigation.navigate("Intro")}>
+        <Text style={styles.skipText}>SKIP</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
-  mainContainer: {
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },
-  Thirdimg: {
+  logo: {
     width: 200,
     height: 200,
-    marginTop: 20,
+    resizeMode: "contain",
     marginBottom: 20,
+    marginTop: 90,
   },
-  h1: {
-    marginTop: 30,
-    fontWeight: "1000",
+  title: {
+    fontSize: 22,
+    textAlign: "center",
+    marginBottom: 10,
+    color: "#004d40",
+    width: 347,
+    height: 80,
+  },
+  bold: {
+    fontWeight: "800",
     fontSize: 32,
-    lineHeight: 15,
-    borderColor: "red",
-    letterSpacing: 2.6,
-    textAlign: "center",
+    color: "#004d40",
   },
-  description: {
-    marginTop: 15,
-    fontSize: 16,
-    textAlign: "center",
+  subtitle: {
+    fontSize: 14,
     color: "gray",
-    lineHeight: 23,
-    paddingHorizontal: 10,
+    textAlign: "center",
+    marginBottom: 30,
   },
-  group3img: {
-    width: 48,
-    height: 9,
-    marginTop: 40,
+  dotsContainer: {
+    flexDirection: "row",
+    marginBottom: 30,
+  },
+  dot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: "#ccc",
+    marginHorizontal: 4,
+  },
+  activeDot: {
+    backgroundColor: "#00796B",
   },
   skipText: {
     color: "gray",
     fontSize: 14,
-    marginTop: 10,
     textDecorationLine: "underline",
   },
 });
