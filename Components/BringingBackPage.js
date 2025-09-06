@@ -4,6 +4,7 @@ import ContinueButton from "./ContinueButton";
 export default function BringingBackPage({ navigation }) {
   return (
     <View style={styles.container}>
+      {/* <StatusBar hidden={true}/> */}
       <Image source={require("../assets/Image_01.png")} style={styles.logo} />
 
       <Text style={styles.title}>
@@ -24,7 +25,7 @@ export default function BringingBackPage({ navigation }) {
 
       <ContinueButton onPress={() => navigation.navigate("Sessions")} />
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("Intro")}>
         <Text style={styles.skipText}>SKIP</Text>
       </TouchableOpacity>
     </View>
@@ -37,7 +38,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    // padding: 20,
   },
   logo: {
     width: 200,
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     height: 80,
   },
   bold: {
-    fontWeight: 800,
+    fontWeight: "800",
     fontSize: 32,
     color: "#004d40",
   },

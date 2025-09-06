@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, Image, StyleSheet, StatusBar } from 'react-native';
 
-const IntroScreen = () => {
+const IntroScreen = ({ navigation }) => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigation.replace("BringingBack"); 
+    }, 2500);
+
+    return () => clearTimeout(timer); 
+  }, [navigation]);
+
   return (
     <View style={styles.container}>
-        <StatusBar hidden={true} />
+      <StatusBar hidden={true} />
       <Image
         source={require('../assets/ccl_logo.png')}
         style={styles.logo}
@@ -48,3 +56,4 @@ const styles = StyleSheet.create({
 });
 
 export default IntroScreen;
+
