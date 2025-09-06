@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 50,
     borderRadius: 6,
     marginBottom: 15,
+    marginTop:30,
   },
   continueText: {
     color: "white",

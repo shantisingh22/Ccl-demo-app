@@ -20,7 +20,7 @@ export default function SignInScreen({ navigation }) {
 
       <Text style={styles.title}>SIGN IN</Text>
       <Text style={styles.subtitle}>
-        Sign In To Access The World Of Toy-Based Experiential Learning,
+        Sign In To Access The World Of Toy-<br></br>Based Experiential Learning,
       </Text>
 
       <Text style={styles.label}>Email Here</Text>
