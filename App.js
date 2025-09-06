@@ -7,6 +7,7 @@ import Sessions from "./Components/Sessions";
 import BringingBackPage from "./Components/BringingBackPage";
 // import FacebookButton from "./Components/FacebookButton";
 // import CertificationCourse from "./Components/CertificationCourse";
+import SignInScreen from "./Components/SignIn"
 
 const Stack = createStackNavigator();
 
@@ -15,9 +16,10 @@ export default function App() {
     <NavigationContainer>
       <StatusBar style="auto" />
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Intro" component={IntroScreen} />
+        {/* <Stack.Screen name="Intro" component={IntroScreen} />
         <Stack.Screen name="BringingBack" component={BringingBackPage} />
-        <Stack.Screen name="Sessions" component={Sessions} />
+          <Stack.Screen name="Sessions" component={Sessions} /> */}
+        <Stack.Screen name="SignIn" component={SignInScreen} />
         {/* <Stack.Screen name="Facebook" component={FacebookButton} /> */}
         {/* <Stack.Screen name="Certification" component={CertificationCourse} /> */}
       </Stack.Navigator>
