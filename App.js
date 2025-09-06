@@ -24,19 +24,18 @@
 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
-
 import IntroScreen from './Components/IntroScreen';
 import BringingBackPage from './Components/BringingBackPage';
-import FacebookButton from "./FacebookButton";
-
-import IntroScreen from './Components/IntroScreen';
+import Sessions from "./Components/Sessions";
+// import FacebookButton from "./Components/FacebookButton";
 
 export default function App() {
   return (
     <View style={styles.container}>
       <IntroScreen />  
-      <FacebookButton />
+      {/* <FacebookButton /> */}
       <BringingBackPage />
+      <Sessions/>
       <StatusBar style="auto" />
     </View>
   );
@@ -50,3 +49,4 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 });
+
