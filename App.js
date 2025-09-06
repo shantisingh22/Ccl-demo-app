@@ -10,8 +10,8 @@ import { StatusBar } from "expo-status-bar";
 // import WorkShop from "./Components/WorkShop";
 // import CertificationCourse from "./Components/CertificationCourse";
 // import FacebookButton from "./Components/FacebookButton";
-import SignInScreen from "./Components/SignIn";
-// import SignUpScreen from "./Components/SignUppage";
+// import SignInScreen from "./Components/SignIn";
+import SignUpScreen from "./Components/SignUppage";
 
 // const Stack = createStackNavigator();
 
@@ -33,8 +33,8 @@ export default function App() {
           component={CertificationCourse}
         /> */}
       {/* <Stack.Screen name="WorkShop" component={WorkShop} /> */}
-      {/* <SignUpScreen /> */}
-      <SignInScreen />
+      <SignUpScreen />
+      {/* <SignInScreen /> */}
     </View>
     // {/* </Stack.Navigator> */}
     // </NavigationContainer>
