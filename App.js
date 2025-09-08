@@ -9,10 +9,10 @@ import Sessions from "./Components/Sessions";
 import BringingBackPage from "./Components/BringingBackPage";
 import WorkShop from "./Components/WorkShop";
 import CertificationCourse from "./Components/CertificationCourse";
-import FacebookButton from "./Components/FacebookButton";
 import SignInScreen from "./Components/SignIn";
 import SignUpScreen from "./Components/SignUppage";
 import CreativeLearning from "./Components/CreativeLearning";
+import HomePage from "./Components/HomePage";
 
 const Stack = createStackNavigator();
 
@@ -26,13 +26,11 @@ export default function App() {
         <Stack.Screen name="Sessions" component={Sessions} />
         <Stack.Screen name="SignIn" component={SignInScreen} />
         <Stack.Screen name="SignUp" component={SignUpScreen} />
-        <Stack.Screen name="Facebook" component={FacebookButton} />
-        <Stack.Screen name="Certification" component={CertificationCourse} />
-        <Stack.Screen name="WorkShop" component={WorkShop} />
         <Stack.Screen name="CertificationCourse" component={CertificationCourse} />
+        <Stack.Screen name="WorkShop" component={WorkShop} />
         <Stack.Screen name="CreativeLearning" component={CreativeLearning} />
+        <Stack.Screen name="HomePage" component={HomePage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-

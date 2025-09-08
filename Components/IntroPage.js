@@ -35,7 +35,7 @@ function QuickButton({ emoji, text, color }) {
   );
 }
 
-export default function HomePage() {
+export default function IntroPage() {
   const [search, setSearch] = useState("");
 
   const handleLogout = () => {
@@ -120,13 +120,7 @@ export default function HomePage() {
 }
 
 const styles = StyleSheet.create({
-  container: { 
-    flex: 1,
-    // backgroundColor: "#fff",
-    // alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#FFF8F0" 
-  },
+  container: { flex: 1, backgroundColor: "#FFF8F0" },
   header: {
     height: 90,
     paddingHorizontal: 20,
@@ -193,8 +187,6 @@ const styles = StyleSheet.create({
   footerBtn: { flex: 1, marginHorizontal: 6, padding: 14, borderRadius: 14, alignItems: "center" },
   footerBtnText: { color: "white", fontWeight: "700" },
 });
-
-
 
 
 

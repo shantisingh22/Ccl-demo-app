@@ -7,14 +7,13 @@ import {
   StyleSheet,
   Alert,
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons"; 
-import FacebookButton from "./FacebookButton"; 
-import AsyncStorage from "@react-native-async-storage/async-storage"; 
+import { Ionicons } from "@expo/vector-icons";
+import FacebookButton from "./FacebookButton";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import GoogleButton from "./GoogleButton";
 
 export default function SignUpScreen({ navigation }) {
   const [name, setName] = useState("");
-  const [number, setNumber] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -25,50 +24,42 @@ export default function SignUpScreen({ navigation }) {
 
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const validatePassword = (password) =>
-  /^(?=.[A-Z])(?=.\d)(?=.*[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/.test(password);
-
-  const validateNumber = (number) => /^[0-9]{10}$/.test(number);
+    /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/.test(password);
 
   const handleSignUp = async () => {
-  let newErrors = {};
+    let newErrors = {};
 
-  if (!name.trim()) {
-    newErrors.name = "Please enter your full name";
-  }
-  if (!validateNumber(number)) {
-    newErrors.number = "Enter a valid 10-digit mobile number";
-  }
-  if (!validateEmail(email)) {
-    newErrors.email = "Enter a valid email address";
-  }
-  if (!validatePassword(password)) {
-    newErrors.password =
-      "Password must be 8+ chars, include 1 uppercase, 1 number & 1 special char";
-  }
-  if (password !== confirmPassword) {
-    newErrors.confirmPassword = "Passwords do not match";
-  }
-
-  setErrors(newErrors);
-
-  if (Object.keys(newErrors).length === 0) {
-    try {
-      const userData = { name, number, email, password };
-
-      // ✅ print in console
-      console.log("User Data Entered:", userData);
-
-      // ✅ store in AsyncStorage
-      await AsyncStorage.setItem("userData", JSON.stringify(userData));
-
-      Alert.alert("✅ Sign up successful!");
-      navigation.navigate("SignIn"); 
-    } catch (error) {
-      console.error("Error saving user data:", error);
+    if (!name.trim()) {
+      newErrors.name = "Please enter your full name";
     }
-  }
-};
+    if (!validateEmail(email)) {
+      newErrors.email = "Enter a valid email address";
+    }
+    if (!validatePassword(password)) {
+      newErrors.password =
+        "Password must be 8+ chars, include 1 uppercase, 1 number & 1 special char";
+    }
+    if (password !== confirmPassword) {
+      newErrors.confirmPassword = "Passwords do not match";
+    }
 
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length === 0) {
+      try {
+        const userData = { name, email, password };
+
+        console.log("User Data Entered:", userData);
+
+        await AsyncStorage.setItem("userData", JSON.stringify(userData));
+
+        Alert.alert("✅ Sign up successful!");
+        navigation.navigate("HomePage"); // ✅ sirf success hone par chalega
+      } catch (error) {
+        console.error("Error saving user data:", error);
+      }
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -143,8 +134,9 @@ export default function SignUpScreen({ navigation }) {
         <Text style={styles.error}>{errors.confirmPassword}</Text>
       )}
 
+      {/* ✅ Fixed Sign Up Button */}
       <TouchableOpacity style={styles.button} onPress={handleSignUp}>
-        <Text style={styles.buttonText}>SIGN IN</Text>
+        <Text style={styles.buttonText}>Sign Up</Text>
       </TouchableOpacity>
 
       <View style={styles.dividerContainer}>
@@ -154,9 +146,7 @@ export default function SignUpScreen({ navigation }) {
       </View>
 
       <FacebookButton />
-      <GoogleButton/>
-
-  
+      <GoogleButton />
     </View>
   );
 }
@@ -190,6 +180,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 12,
     marginBottom: 10,
+    width: 320,
   },
   passwordContainer: {
     flexDirection: "row",
@@ -199,6 +190,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     marginBottom: 10,
     borderColor: "#ccc",
+    width: 320,
   },
   passwordInput: {
     flex: 1,
@@ -215,6 +207,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: "center",
     marginVertical: 20,
+    width: 320,
   },
   buttonText: {
     color: "#fff",
@@ -225,6 +218,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginBottom: 20,
+    width: 320,
   },
   divider: {
     flex: 1,
@@ -246,6 +240,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginBottom: 20,
     marginTop: 10,
+    width: 320,
   },
   googleText: {
     color: "#6C6C6C",
@@ -262,18 +257,12 @@ const styles = StyleSheet.create({
     color: "#008080",
     fontWeight: "bold",
   },
-
   header: {
-    flexDirection: "row",       
-    alignItems: "center",       
+    flexDirection: "row",
+    alignItems: "center",
     marginBottom: 20,
   },
-  backBtn: {
-    marginRight: 10,            
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "#004d40",
+  backBtnHeader: {
+    marginRight: 10,
   },
 });
