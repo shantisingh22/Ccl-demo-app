@@ -25,7 +25,7 @@ export default function Sessions({ navigation }) {
 
       <ContinueButton onPress={() => navigation.navigate("WorkShop")} />
 
-      <TouchableOpacity onPress={() => navigation.navigate("BringingBack")}>
+      <TouchableOpacity onPress={() => navigation.navigate("WorkShop")}>
         <Text style={styles.skipText}>SKIP</Text>
       </TouchableOpacity>
     </View>

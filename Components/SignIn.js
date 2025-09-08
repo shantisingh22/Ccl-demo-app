@@ -22,8 +22,6 @@ export default function SignInScreen({ navigation }) {
 
   const handleSignIn = async () => {
   let newErrors = {};
-
-  // ✅ Basic validation
   if (!validateEmail(email.trim().toLowerCase())) {
     newErrors.email = "Enter a valid email address";
   }
@@ -38,7 +36,6 @@ export default function SignInScreen({ navigation }) {
     const storedData = await AsyncStorage.getItem("userData");
     console.log("📦 Stored userData:", storedData);
 
-    // If no stored user at all → show unified error
     if (!storedData) {
       setErrors({
         general: "❌ You don’t have an account. First, you need to sign up.",
@@ -48,7 +45,6 @@ export default function SignInScreen({ navigation }) {
 
     const parsedData = JSON.parse(storedData);
 
-    // For simplicity, assume storedData is a single user object
     const storedEmail = parsedData.email?.trim().toLowerCase();
     const storedPassword = parsedData.password?.trim();
 

@@ -35,12 +35,23 @@ function QuickButton({ emoji, text, color }) {
   );
 }
 
-export default function HomePage() {
+export default function HomePage({ navigation }) {
   const [search, setSearch] = useState("");
 
-  const handleLogout = () => {
-    alert("Logged out!");
-  };
+ const handleLogout = () => {
+  console.log("Logout pressed");
+  setTimeout(() => {
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'Intro' }],
+    });
+  }, 50);
+};
+
+
+  // ...rest of your code
+
+
 
   return (
     <View style={styles.container}>
@@ -122,8 +133,6 @@ export default function HomePage() {
 const styles = StyleSheet.create({
   container: { 
     flex: 1,
-    // backgroundColor: "#fff",
-    // alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#FFF8F0" 
   },

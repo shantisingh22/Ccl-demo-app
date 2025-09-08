@@ -24,7 +24,7 @@ export default function CertificationCourse ({ navigation }) {
 
       <ContinueButton onPress={() => navigation.navigate("CreativeLearning")} />
 
-      <TouchableOpacity onPress={() => navigation.navigate("WorkShop")}>
+      <TouchableOpacity onPress={() => navigation.navigate("CreativeLearning")}>
         <Text style={styles.skipText}>SKIP</Text>
       </TouchableOpacity>
     </View>
